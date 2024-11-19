@@ -11,14 +11,14 @@
 (function() {
     'use strict';
 
-    // 等待页面加载完成
+    // 等待页面加载完毕
     window.addEventListener('load', function() {
-        // 通过 class 或 data 属性选择要去掉的 div 元素
-        let adDiv = document.querySelector('div.adcard-content[data-v-c6402956]');
+        // 获取所有带有 data-v-c6402956 属性的 div 元素
+        const divs = document.querySelectorAll('div[data-v-c6402956]');
 
-        // 如果找到这个 div，删除它
-        if (adDiv) {
-            adDiv.remove();
-        }
-    });
+        // 遍历并删除每个匹配的 div 元素
+        divs.forEach(div => {
+            div.remove();
+        });
+    }, false);
 })();
